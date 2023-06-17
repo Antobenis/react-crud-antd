@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  height: 100vh;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: aqua;
+}
+
+.login-form {
+  width: 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.ant-table-cell {
+  text-align: center;
+}
+
+.ant-table-cell img {
+  border-radius: 50%;
+}
