@@ -4,12 +4,12 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 const Get = () => {
     const [data, setData] = React.useState(null)
-    console.log(data, 'data')
+    // console.log(data, 'data')
     useEffect(() => {
         axios.get('https://reqres.in/api/users')
             .then(function (response) {
                 // handle success
-                console.log(response?.data?.data);
+                // console.log(response?.data?.data);
                 setData(response?.data?.data)
             })
             .catch(function (error) {
@@ -57,7 +57,6 @@ const Get = () => {
             <Table columns={columns} dataSource={data}
                 rowKey={(r) => (r.id)}
                 size="middle"
-
             />
         </>
     )

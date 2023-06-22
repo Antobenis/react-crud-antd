@@ -62,7 +62,7 @@ const Register = () => {
 
                     <Form.Item>
                         <Button type="primary" htmlType="submit" className="login-form-button-danger" block danger>
-                            Log in
+                            Register
                         </Button>
                     </Form.Item>
                 </Form>
