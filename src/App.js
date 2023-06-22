@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import { Suspense, lazy } from 'react';
 import './App.css';
-
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { Private } from './private/privateRoutes';
+const Register = lazy(() => import('./compenents/register/Register'))
+const Login = lazy(() => import('./compenents/login/Login'))
+const Get = lazy(() => import('./compenents/get/Get'))
+const View = lazy(() => import('./view/view'))
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Suspense>
+        <Routes>
+          <Route path='/' element={<Navigate to={'/login'} />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route element={<Private />}>
+            <Route path='/get' element={<Get />} />
+            <Route path='/view/:id' element={<View />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </>
   );
 }
 
